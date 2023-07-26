@@ -165,6 +165,11 @@ const eventListeners = () => {
     console.log("You clicked a filter button", e.target.id);
     // filter on category (either use .filter or a loop)
     // rerender DOM with new array (use the cardsOnDom function)
+    // console.log(e.target.id); 
+    let filteredArray; 
+    filteredArray = data.filter((item) => item.category == e.target.id);
+    // console.log(filteredArray); 
+    cardsOnDom(filteredArray); 
   });
 
   // BUTTONS ON CARDS
@@ -215,7 +220,7 @@ const startApp = () => {
   videoPlayer();
   filterButtons();
   cardsOnDom(data);
-  // eventListeners(); // always last
+  eventListeners(); // always last
 };
 
 startApp();

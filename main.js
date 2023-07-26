@@ -195,6 +195,14 @@ const eventListeners = () => {
       if (e.target.id.includes('delete')) {
         console.log("Delete Button Pressed")
         // rerender DOM with updated data array (use the cardsOnDom function)
+        let deleteString = e.target.id; 
+        let vidId = deleteString.slice(8, 19);
+        data.forEach((vid) => {
+          if (vid.videoId == vidId) {
+           data.splice(data.indexOf(vid), 1)
+          }
+        })
+        cardsOnDom(data);  
       }
     }
   });

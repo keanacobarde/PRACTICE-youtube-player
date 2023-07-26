@@ -14,10 +14,10 @@ We will be using the following skills to build this app:
 - Events
 
 Steps:
-1. Create the structure of your HTML
+<!-- 1. Create the structure of your HTML
 1. Create your renderToDom utility function
 1. Start building the HTML components and render on DOM
-1. Add event listeners
+1. Add event listeners -->
 1. Get button filters working ONE at a time
 1. Get watch buttons working
 1. Get delete buttons working

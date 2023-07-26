@@ -183,13 +183,17 @@ const eventListeners = () => {
     if (e.target.id) {
       // get the video ID off the button ID
       // find the index of the object in the array
-      
+      let vidId; 
+      vidId = e.target.id;
+      let vidIdArray; 
+      vidIdArray = vidId.split("--"); 
+      vidId = vidIdArray[1]; 
       // only listen for events with "watch" or "delete" included in the string
-
+      
       // if watch: grab the ID and rerender the videoPlayer with that ID as an argument
       if (e.target.id.includes('watch')) {
         console.log("Pressed Watch Button")        
-        
+       videoPlayer(vidId);  
         
         // scroll to top of page
         document.location = '#';
@@ -200,8 +204,8 @@ const eventListeners = () => {
       if (e.target.id.includes('delete')) {
         console.log("Delete Button Pressed")
         // rerender DOM with updated data array (use the cardsOnDom function)
-        let deleteString = e.target.id; 
-        let vidId = deleteString.slice(8, 19);
+        // let deleteString = e.target.id; 
+        // let vidId = deleteString.slice(8, 19);
         data.forEach((vid) => {
           if (vid.videoId == vidId) {
            data.splice(data.indexOf(vid), 1)

@@ -165,11 +165,16 @@ const eventListeners = () => {
     console.log("You clicked a filter button", e.target.id);
     // filter on category (either use .filter or a loop)
     // rerender DOM with new array (use the cardsOnDom function)
-    // console.log(e.target.id); 
-    let filteredArray; 
-    filteredArray = data.filter((item) => item.category == e.target.id);
-    // console.log(filteredArray); 
-    cardsOnDom(filteredArray); 
+    // console.log(e.target.id);
+    if (e.target.id == "clear") {
+      cardsOnDom(data); 
+    } else if (e.target.id == "favorite") {
+      // console.log(e.target.id); 
+      cardsOnDom(data.filter((vid) => vid.favorite)); 
+    } else {
+      // console.log(filteredArray); 
+      cardsOnDom(data.filter((item) => item.category == e.target.id)); 
+    }
   });
 
   // BUTTONS ON CARDS
@@ -178,7 +183,7 @@ const eventListeners = () => {
     if (e.target.id) {
       // get the video ID off the button ID
       // find the index of the object in the array
-
+      
       // only listen for events with "watch" or "delete" included in the string
 
       // if watch: grab the ID and rerender the videoPlayer with that ID as an argument

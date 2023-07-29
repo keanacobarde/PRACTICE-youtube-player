@@ -228,13 +228,13 @@ const eventListeners = () => {
       videoId: document.querySelector("#videoId").value,
       title: document.querySelector("#title").value,
       category: document.querySelector("#category").value, 
-      favorite: console.log(document.querySelector("#favorite").value)
+      favorite: document.querySelector("#favorite").checked
     }
-    console.log(newVidObj); 
-    
+    data.push(newVidObj); 
+    cardsOnDom(data); 
     // Close modal and reset form
     formModal.hide()
-    form.reset();
+    form.reset(); 
   });
 };
 
